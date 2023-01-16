@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Comfortaa:wght@300&family=Faster+One&family=Fredericka+the+Great&family=Frijole&family=Gloria+Hallelujah&family=RocknRoll+One&family=Rubik+Dirt&family=Source+Sans+Pro&family=Titan+One&family=Yeon+Sung&display=swap');
+body{
+    font-family: 'Comfortaa', cursive;
+}
+h1{
+    font-family: 'Akaya Telivigala', cursive;;
+}
+
+.card-img-top{
+    transition: 2s;
+    width: auto;
+    height: 300px;
+}
+
+.card-img-top:hover{
+    scale: 1.1;
+    transition: 2s;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+
+.hp1{
+    margin-top: 82px;
+}
+.ap2{
+    margin-top: 100px;
+}
+
+/* .rl3{
+    margin-top: 100px;
+} */

@@ -1,0 +1,29 @@
+<div class="ap2">
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4 mt-5 bg bg-dark rounded">
+                <div class="image_container">
+                    <img src="../../assets/images/pizza-hut.jpg" alt="" class="rounded image" height="500px" width="420px">
+                </div>
+            </div>
+            <div class="col-4 mt-5 bg bg-dark rounded">
+                <h1 class="title ms-5 ps-5 mt-4">PIZZERIA</h1>
+                <div class="login-form">
+                    <form [formGroup]="loginForm">
+                        <input formControlName="email" type="text" name="email" id="login_email" placeholder="Enter your email" class="form-control ms-5 me-4 mt-5 w-75"><br>
+                        <div *ngIf="this.loginForm.get('email')?.errors && this.loginForm.get('email')?.touched" style="color: red; text-align: center;">Invalid Email</div>
+    
+                        <input formControlName="pswd" type="password" name="password" id="login_pswd" placeholder="Enter your password" class="form-control ms-5 mt-3 w-75"><br>
+                        <div *ngIf="this.loginForm.get('pswd')?.errors && this.loginForm.get('pswd')?.touched" style="color: red; text-align: center;">Invalid Password</div>
+                        <input type="button" value="Login" id="login_btn" (click)="login()" routerLink="products/home" class="w-75 mt-4 ms-5 btn btn-warning">
+                    </form>
+                    
+                </div><br><br>
+                
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</div>
+

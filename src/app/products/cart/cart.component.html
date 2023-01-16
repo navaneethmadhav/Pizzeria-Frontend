@@ -1,0 +1,51 @@
+<div class="ap2 ms-5" *ngIf="cartitems.length==0">
+    <div class="container rounded border border-dark m-5 p-5">
+        <div class="row text-center">
+            <div class="col">
+                <img src="https://bakestudio.in/assets/images/cart/empty-cart.gif" alt="" width="400px">
+                <h3 class="mt-4">Your Cart is Empty</h3>
+                <a routerLink="/products/all-products" class="btn btn-success mt-3">Shop Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="ap2" *ngIf="cartitems.length!=0">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table border border-dark m-5">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of cartitems let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{product.name}}</td>
+                            <td><img [src]="product.image" width="120px" alt=""></td>
+                            <td>{{product.description}} </td>
+                            <td>${{product.price}}</td>
+                            <td><i class="fa fa-trash text-danger"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="float: right;" class="mb-4">
+                    <button class="btn btn-primary">Empty cart</button>
+                    <button class="btn btn-warning ms-4">View More</button>
+                    <button class="btn btn-success ms-4">Empty cart</button>&nbsp;&nbsp;
+                    <b for="">Grand Total : 500</b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
