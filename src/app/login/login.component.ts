@@ -59,32 +59,34 @@ export class LoginComponent implements OnInit {
   login(){
     // alert('clicked')
     var email=this.loginForm.value.email;
-    var pswd=this.loginForm.value.pswd;
+    var password=this.loginForm.value.pswd;
     var userDetails=this.ds.userDetails;
     if(this.loginForm.valid){
-      const result=this.ds.login(email,pswd);
-      if(result){
-        alert('Login Successful')
-        this.router.navigateByUrl('')
+      this.ds.login(email,password)
+      
+      .subscribe((result:any)=>{
+        localStorage.setItem('currentUser',JSON.stringify(result.currentUser));
+        localStorage.setItem('currentEmail',JSON.stringify(result.currentEmail));
+        alert(result.message);
+        this.router.navigateByUrl('all-products')
+      },
+      result=>{
+        alert(result.error.message)
+        this.router.navigateByUrl('login')
       }
-      else{
-        alert('Login Failed');
-      }
-    }
-    else{
-      alert('Invalid form')
-    }
-  }
-    // if(email in userDetails){
-    //   if(pswd==userDetails[email]['password']){
+      )
+    //   if(result){
     //     alert('Login Successful')
-    //     this.router.navigateByUrl('dashboard')
+    //     this.router.navigateByUrl('')
     //   }
     //   else{
-    //         alert('Invalid Password');
-    //       }
+    //     alert('Login Failed');
+    //     this.router.navigateByUrl('login')
+    //   }
     // }
     // else{
-    //     alert('Invalid Userdetails')
-    //   }
+    //   alert('Invalid form')
+    // }
+    }
+  }
 }

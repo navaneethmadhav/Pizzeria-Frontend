@@ -37,20 +37,19 @@ export class RegisterComponent implements OnInit {
     var email=this.registerForm.value.email;
     var phone=this.registerForm.value.phn;
     if(this.registerForm.valid){
-      console.log(this.registerForm.get('uname')?.errors);
+      // console.log(this.registerForm.get('uname')?.errors);
       
-      const result=this.ds.register(username,password,email,phone);
-      if(result){
-        alert('Register Successful')
-        this.router.navigateByUrl('')
-      }
-      else{
-        alert('Register Failed')
-        this.router.navigateByUrl('register')
-      }
+      this.ds.register(username,password,email,phone)
+      .subscribe((result:any)=>{
+        alert(result.message)
+        this.router.navigateByUrl('login')
+      },
+      result=>{
+        alert(result.error.message)
+      })
     }
-    else{
-      alert('Invalid form')
-    }
+    // else{
+    //   alert('Invalid form')
+    // }
   }
 }

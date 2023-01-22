@@ -6,7 +6,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><input (keyup)="search($event)" type="text" placeholder="Search your item" class="form-control ms-4"></li>
+                <li class="nav-item"><input (keyup)="search($event)" type="text" placeholder="Search your item" class="form-control rounded-pill ms-4"></li>
                 <li class="nav-item"><a class="nav-link active text-light ms-5" aria-current="page" routerLink="products/all-products">Menu</a></li>
                 <li class="nav-item"><a class="nav-link active text-light ms-5" aria-current="page" routerLink="login">Login</a></li>
                 <li class="nav-item"><a class="nav-link active text-light ms-4" aria-current="page" routerLink="register">Sign Up</a></li>
@@ -18,7 +18,9 @@
                     Cart
                     <span class="badge bg-light text-dark ms-1 rounded-pill">{{cartcount}}</span>
                 </a>
+                
             </form>
+            <button class="btn btn-warning rounded-pill" style="float: right; position: absolute; left: 1400px;" (click)="logout()">Logout</button>
         </div>
     </div>
 </nav>

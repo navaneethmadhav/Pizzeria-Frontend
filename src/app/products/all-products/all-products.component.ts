@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { CartService } from '../cart.service';
 
@@ -12,7 +13,7 @@ export class AllProductsComponent implements OnInit {
   allproducts:any=[];
   searchterm:string='';
 
-  constructor(private api:ApiService,private cart:CartService) { }
+  constructor(private api:ApiService,private cart:CartService,private router:Router) { }
 
   ngOnInit(): void {
     this.api.getProducts().subscribe(
@@ -29,5 +30,16 @@ export class AllProductsComponent implements OnInit {
 
   addcart(product:any){
     this.cart.addcart(product)
+  }
+
+  proceed(){
+    if(!localStorage.getItem('currentEmail')){
+      alert('Please Login First')
+      window.location.href='login'
+    }
+    else{
+      alert('Your Order is Placed')
+    }
+    
   }
 }

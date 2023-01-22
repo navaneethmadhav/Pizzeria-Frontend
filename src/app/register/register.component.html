@@ -23,7 +23,7 @@
                         <input formControlName="pswd" type="password" name="pswd" id="reg_pswd" placeholder="Enter your password" class="form-control ms-5 mt-3 w-75"><br>
                         <div *ngIf="this.registerForm.get('pswd')?.errors && this.registerForm.get('pswd')?.touched" style="color: red; text-align: center;">Invalid Password</div>
     
-                        <input type="button" value="Register" id="reg_btn" (click)="register()" class="w-75 mt-4 ms-5 btn btn-warning">
+                        <button id="reg_btn" (click)="register()" class="w-75 mt-4 ms-5 btn btn-warning">Register</button>
                     </form>
                     
                 </div><br><br>

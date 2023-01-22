@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../products/api.service';
 import { CartService } from '../products/cart.service';
 
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   cartcount:number=0
 
-  constructor(private api:ApiService,private cart:CartService) { }
+  constructor(private api:ApiService,private cart:CartService,private router:Router) { }
 
   ngOnInit(): void {
     this.cart.cartlist.subscribe(
@@ -26,5 +27,12 @@ export class HeaderComponent implements OnInit {
   search(event:any){
     let searchkey=event.target.value
     this.api.searchkey.next(searchkey)
+  }
+
+  logout(){
+    localStorage.removeItem('currentEmail')
+    localStorage.removeItem('currentUser')
+    this.cart.removeall()
+    this.router.navigateByUrl('')
   }
 }

@@ -23,8 +23,8 @@
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
-                                <a class="btn btn-outline-danger mt-auto" href="#">Order Now</a>
-                                <button (click)="addcart(product)" class="btn btn-outline-success ms-3"><i class="fa fa-cart-plus"></i></button>
+                                <button class="btn btn-outline-dark rounded-pill mt-auto" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Order Now</button>
+                                <button (click)="addcart(product)" class="btn btn-outline-success rounded-pill ms-2"><i class="fa fa-cart-plus"></i></button>
                             </div>
                         </div>
                     </div>
@@ -33,4 +33,32 @@
         </div>
     </section>
  </div>
+
+ <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Order Page</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h2>Delivery Address</h2>
+            <form action="" class="border border-danger rounded p-3">
+              <input type="text" placeholder="Name" class="form-control"><br><br>
+              <input type="text" placeholder="Address/House No" class="form-control"><br><br>
+              <input type="text" placeholder="Pincode" class="form-control"><br><br>
+              <input type="text" placeholder="Street" class="form-control"><br><br>
+              <input type="text" placeholder="Country" class="form-control"><br><br>
+              <input type="text" placeholder="Contact Number" class="form-control"><br><br>
+              <input type="text" placeholder="Email" class="form-control"><br><br>
+            </form><br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="proceed()" data-bs-dismiss="modal">Proceed</button>
+        </div>
+      </div>
+    </div>
+  </div>
  
