@@ -22,7 +22,7 @@
                             <th>Number</th>
                             <th>Name</th>
                             <th>Image</th>
-                            <th>Description</th>
+                            <!-- <th>Description</th> -->
                             <th>Price</th>
                             <th>Action</th>
                         </tr>
@@ -32,7 +32,7 @@
                             <td>{{i+1}}</td>
                             <td>{{product.name}}</td>
                             <td><img [src]="product.image" width="120px" alt=""></td>
-                            <td>{{product.description}} </td>
+                            <!-- <td>{{product.description}} </td> -->
                             <td>${{product.price}}</td>
                             <td><i (click)="removeitem(product)" class="fa fa-trash text-danger"></i></td>
                         </tr>

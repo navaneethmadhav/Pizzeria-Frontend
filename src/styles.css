@@ -4,7 +4,7 @@ body{
     font-family: 'Comfortaa', cursive;
 }
 h1{
-    font-family: 'Akaya Telivigala', cursive;;
+    font-family: 'Akaya Telivigala', cursive;
 }
 
 .card-img-top{
@@ -30,6 +30,10 @@ h1{
 }
 .ap2{
     margin-top: 100px;
+}
+
+.main-timeline{
+    z-index: 0;
 }
 
 /* .rl3{
