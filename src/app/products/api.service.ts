@@ -14,4 +14,11 @@ export class ApiService {
   getProducts(){
     return this.http.get('http://localhost:3000/all-products')
   }
+  // getFood(){
+  //   return this.http.get('http://localhost:3000/all-products')
+  // }
+
+  // getfooddetails(id:any){
+  //   return this.http.get('http://localhost:3000/getfooddetails/',data)
+  // }
 }

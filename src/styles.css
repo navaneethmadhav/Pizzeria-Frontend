@@ -8,15 +8,17 @@ h1{
 }
 
 .card-img-top{
-    transition: 2s;
+    /* transition: 2s; */
     width: auto;
     height: 300px;
 }
 
-.card-img-top:hover{
+/* .card-img-top:hover{
     scale: 1.1;
     transition: 2s;
-}
+} */
+
+
 
 .navbar{
     position: fixed;
@@ -29,6 +31,10 @@ h1{
     margin-top: 82px;
 }
 .ap2{
+    margin-top: 100px;
+}
+
+.ap3{
     margin-top: 100px;
 }
 

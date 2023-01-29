@@ -22,7 +22,7 @@
                             <th>Number</th>
                             <th>Name</th>
                             <th>Image</th>
-                            <!-- <th>Description</th> -->
+                            <!-- <th>Quantity</th> -->
                             <th>Price</th>
                             <th>Action</th>
                         </tr>
@@ -32,7 +32,7 @@
                             <td>{{i+1}}</td>
                             <td>{{product.name}}</td>
                             <td><img [src]="product.image" width="120px" alt=""></td>
-                            <!-- <td>{{product.description}} </td> -->
+                            <!-- <td>{{product.quantity}} </td> -->
                             <td>${{product.price}}</td>
                             <td><i (click)="removeitem(product)" class="fa fa-trash text-danger"></i></td>
                         </tr>
@@ -41,7 +41,7 @@
                 <div style="float: right;" class="mb-4">
                     <button (click)="removeall()" class="btn btn-primary">Empty cart</button>
                     <a class="btn btn-warning ms-4" routerLink="/products/all-products">View More</a>
-                    <button class="btn btn-success ms-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Check Out</button>&nbsp;&nbsp;
+                    <button class="btn btn-success ms-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Order Now</button>&nbsp;&nbsp;
                     <b for="">Grand Total : ${{grand}}</b>
                 </div>
             </div>
@@ -59,14 +59,27 @@
         </div>
         <div class="modal-body">
           <h2>Delivery Address</h2>
-          <form action="" class="border border-danger rounded p-3">
-            <input type="text" placeholder="Name" class="form-control"><br><br>
-            <input type="text" placeholder="Address/House No" class="form-control"><br><br>
-            <input type="text" placeholder="Pincode" class="form-control"><br><br>
-            <input type="text" placeholder="Street" class="form-control"><br><br>
-            <input type="text" placeholder="Country" class="form-control"><br><br>
-            <input type="text" placeholder="Contact Number" class="form-control"><br><br>
-            <input type="text" placeholder="Email" class="form-control"><br><br>
+          <form action="" [formGroup]="orderForm" class="border border-danger rounded p-3">
+            <input formControlName="uname" id="uname" name="uname" type="text" placeholder="Name" class="form-control mt-4">
+            <div *ngIf="this.orderForm.get('uname')?.errors && this.orderForm.get('uname')?.touched" style="color: red; text-align: center;">Invalid Username</div>
+
+            <input formControlName="address" id="address" name="address" type="text" placeholder="Address/House No" class="form-control mt-4">
+            <div *ngIf="this.orderForm.get('address')?.errors && this.orderForm.get('address')?.touched" style="color: red; text-align: center;">Invalid Address</div>
+
+            <input formControlName="pincode" id="pincode" name="pcode" type="text" placeholder="Pincode" class="form-control mt-4">
+            <div *ngIf="this.orderForm.get('pincode')?.errors && this.orderForm.get('pincode')?.touched" style="color: red; text-align: center;">Invalid Pincode</div>
+
+            <input formControlName="street" id="street" name="street" type="text" placeholder="Street" class="form-control mt-4">
+            <div *ngIf="this.orderForm.get('street')?.errors && this.orderForm.get('street')?.touched" style="color: red; text-align: center;">Invalid</div>
+
+            <input formControlName="country" id="country" name="cntry" type="text" placeholder="Country" class="form-control mt-4">
+            <div *ngIf="this.orderForm.get('country')?.errors && this.orderForm.get('country')?.touched" style="color: red; text-align: center;">Invalid</div>
+
+            <input formControlName="phn" id="phn" name="contact" type="text" placeholder="Contact Number" class="form-control mt-4">
+            <div *ngIf="this.orderForm.get('phn')?.errors && this.orderForm.get('phn')?.touched" style="color: red; text-align: center;">Invalid Phone Number</div>
+
+            <input formControlName="email" id="email" name="uemail" type="text" placeholder="Email" class="form-control mt-4">
+            <div *ngIf="this.orderForm.get('email')?.errors && this.orderForm.get('email')?.touched" style="color: red; text-align: center;">Invalid Email</div>
           </form><br>
 
           <hr style="width: 75%; margin-left: 50px;">
@@ -87,7 +100,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="proceed()" data-bs-dismiss="modal">Proceed</button>
+          <button type="button" class="btn btn-primary" (click)="proceed()" data-bs-dismiss="modal">Order</button>
         </div>
       </div>
     </div>
