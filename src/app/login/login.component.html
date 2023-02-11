@@ -18,7 +18,7 @@
                         <div *ngIf="this.loginForm.get('pswd')?.errors && this.loginForm.get('pswd')?.touched" style="color: red; text-align: center;">Invalid Password</div>
                         <button id="login_btn" (click)="login()" class="w-75 mt-4 ms-5 btn btn-warning">Login</button>
                     </form>
-                    
+                    <h6 class="mt-5 text-light text-center">New User ? <a routerLink="/register" class="text-decoration-none">Register Here</a></h6>
                 </div><br><br>
                 
             </div>

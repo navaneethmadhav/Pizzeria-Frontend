@@ -50,18 +50,20 @@ export class AllProductsComponent implements OnInit {
   proceed(){
     if(!localStorage.getItem('currentEmail')){
       alert('Please Login First')
+      this.router.navigateByUrl('login')
       window.location.href='login'
     }
     else{
-      if(this.orderForm.valid){
-        alert('Your Order is Placed')
-        
-      }
-      else{
+      if(this.orderForm.invalid){
         alert('Invalid Form')
+        this.router.navigateByUrl('all-products')
+        window.location.reload()
       }
     }
-    
+  }
+
+  order(){
+    alert('Your Order is placed')
   }
 
   // filter(category:any){

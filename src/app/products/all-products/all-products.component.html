@@ -361,7 +361,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="proceed()" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Proceed</button>
+          <button type="button" class="btn btn-primary" (click)="proceed()" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Proceed</button>
         </div>
       </div>
     </div>
@@ -396,7 +396,7 @@
                   </div><br>
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2"><img src="https://i.postimg.cc/XqD66jYf/Phone-Pe-Logo-wine.png" alt="" style="width: 100px; margin-top: -25px;"></label>
+                    <label class="form-check-label" for="flexRadioDefault2"><img src="https://i.postimg.cc/XqD66jYf/Phone-Pe-Logo-wine.png" alt="" style="width: 150px; margin-top: -25px;"></label>
                   </div>
                 </div>
               </div>
@@ -409,14 +409,16 @@
               </h2>
               <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                  <div style="margin-top: 50px; margin-left: -25px;">
-                    <img src="https://img.freepik.com/free-vector/realistic-credit-card-design_23-2149126088.jpg?w=2000" alt="" style="width: 150px;">
+                  <div class="col-md-6" style="margin-left: -10px">
+                    <img src="https://img.freepik.com/free-vector/realistic-credit-card-design_23-2149126088.jpg?w=2000" alt="" class="w-75">
                   </div>
-                  <div style="margin-left: 150px; margin-top: -180px;">
+                  <div style="margin-top: -150px; margin-left: 170px;">
                     <form action="">
                       <div class="form-group">
                         <label for="inputAddress">Card Number</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="" width="w-50">
+                        <div>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="" >
+                        </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group col-md-6">
@@ -436,21 +438,41 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                  <i class="fa-sharp fa-solid fa-wallet"></i>&nbsp; Wallet
+                  <i class="fa-sharp fa-solid fa-wallet"></i>&nbsp;Wallet
                 </button>
               </h2>
               <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2"><img src="https://i.postimg.cc/y6GqLNgj/2560px-Paytm-Logo-standalone-svg.png" alt="" class="w-25"></label>
+                  </div><br>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2"><img src="https://i.postimg.cc/PqJ9bsX9/769-7692873-download-google-pay-logo-png.jpg" alt="" style="width: 45px;"></label>
+                  </div><br>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2"><img src="https://i.postimg.cc/XqD66jYf/Phone-Pe-Logo-wine.png" alt="" style="width: 150px; margin-top: -25px;"></label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2"><img src="https://download.logo.wine/logo/Amazon_Pay/Amazon_Pay-Logo.wine.png" alt="" style="width: 150px; margin-top: -25px;"></label>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" (click)="order()" data-bs-dismiss="modal">Order</button>
         </div>
       </div>
     </div>
   </div>
-  <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>
+  
 
-  <app-footer></app-footer>
+
+
+
+<app-footer></app-footer>

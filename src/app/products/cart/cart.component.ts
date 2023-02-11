@@ -66,19 +66,22 @@ export class CartComponent implements OnInit {
   proceed(){
     if(this.cartitems.length==1){
       alert('please add more than one item to use cart')
-      this.router.navigateByUrl('/products/all-products')
+      // this.router.navigateByUrl('/products/all-products')
+      window.location.href='all-products'
     }
     else{
-      if(this.orderForm.valid){
-        alert('Your Order is Placed')
-        this.router.navigateByUrl('')
-        this.removeall()
-      }
-      else{
+      if(this.orderForm.invalid){
         alert('Invalid Form')
+        this.router.navigateByUrl('cart')
+        window.location.reload()
+        
       }
     }
-    
+  }
+
+  order(){
+    alert('Your Order is placed')
+    this.removeall()
   }
 
 }
