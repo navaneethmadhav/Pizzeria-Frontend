@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { ViewProductComponent } from './view-product/view-product.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     FilterPipe,
     FooterComponent,
+    ViewProductComponent,
+    PaymentPageComponent,
   ],
   imports: [
     CommonModule,

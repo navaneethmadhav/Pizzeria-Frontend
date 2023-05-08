@@ -79,9 +79,4 @@ export class CartComponent implements OnInit {
     }
   }
 
-  order(){
-    alert('Your Order is placed')
-    this.removeall()
-  }
-
 }
